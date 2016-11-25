@@ -8,6 +8,7 @@
   </head>
   <body>
     <div id="app">
+      <h1 v-once>{{ title }}</h1>
       <input type="text" v-on:input="changeTitle">
       <p>{{ sayHello() }} - <a v-bind:href="link">Pins</a></p>
     </div>
@@ -15,11 +16,12 @@
 new Vue({
   el: '#app',
   data: {
-    title: "What's up?!",
+    title: "Hello",
     link: "http://www.pins.com"
   },
   methods: {
     sayHello: function() {
+      this.title = "What's up?!";
       return this.title;
     },
     changeTitle: function(event) {
