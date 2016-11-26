@@ -11,13 +11,16 @@
       <h1 v-once>{{ title }}</h1>
       <input type="text" v-on:input="changeTitle">
       <p>{{ sayHello() }} - <a v-bind:href="link">Pins</a></p>
+      <hr>
+      <p v-html="finishedLinked"></p>
     </div>
     <script>
 new Vue({
   el: '#app',
   data: {
     title: "Hello",
-    link: "http://www.pins.com"
+    link: "http://www.pins.com",
+    finishedLinked: '<a href="http://www.nerdtree.com">NerdTree</a>'
   },
   methods: {
     sayHello: function() {
